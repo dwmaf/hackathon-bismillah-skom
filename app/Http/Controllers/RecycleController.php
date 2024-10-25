@@ -26,4 +26,11 @@ class RecycleController extends Controller
 
         return redirect('/hasil')->with('success', 'Berhasil tambah data')->with('recycle', $recycle)->with('merk', $merk);
     }
+
+    public function history()
+    {
+        return view('/historyrecycle', [
+            'recycles' => Recycle::with('merk')->get()
+        ]);
+    }
 }

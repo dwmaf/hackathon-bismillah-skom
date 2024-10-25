@@ -1,5 +1,4 @@
-@extends('layouts.layout')
-@section('child')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-5">
@@ -31,4 +30,4 @@
         </div>
     </div>
 </div>    
-@endsection
+

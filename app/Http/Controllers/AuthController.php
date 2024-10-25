@@ -29,7 +29,7 @@ class AuthController extends Controller
         // Auth::login($user);
 
         // Return a response
-        return redirect()->intended('/recycle');
+        return redirect()->intended('/login');
     }
 
     // Login an existing user
@@ -44,7 +44,7 @@ class AuthController extends Controller
         // Attempt to log the user in
         if (Auth::attempt($validatedData)) {
             // Authentication passed, return user data
-            return redirect()->intended('/recycle');
+            return redirect()->intended('/Trecycle');
         }
 
         // If authentication fails, throw a validation exception
@@ -57,6 +57,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return response()->json(['message' => 'Logged out successfully']);
+        return redirect()->intended('/login');
     }
 }
