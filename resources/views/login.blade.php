@@ -17,8 +17,8 @@
                     <form action="/adminlogin" method="POST">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="username" name="username" type="text" placeholder="Username" required/>
-                            <label for="username">Email</label>
+                            <input class="form-control" id="email" name="email" type="text" placeholder="Username" required/>
+                            <label for="email">Email</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input class="form-control" id="password" name="password" type="password" placeholder="Password" required/>

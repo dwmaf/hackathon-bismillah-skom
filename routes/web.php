@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/recycle', function () {
     return view('recycle');
 });
+Route::get('/Trecycle', function () {
+    return view('Trecycle');
+});
