@@ -37,8 +37,8 @@ class AuthController extends Controller
     {
         // Validate the incoming request data
         $validatedData = $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string|min:8',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
         // Attempt to log the user in
