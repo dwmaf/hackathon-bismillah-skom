@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-5">
-            <div class="card shadow-lg border-0 rounded-lg mt-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5" style="height: 400px">
                 <div class="card-header text-center">
                     <h3 class=" font-weight-light my-4">Login</h3>
                 </div>
@@ -13,17 +13,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
-                <div class="card-body">
+                <div class="card-body" >
                     <form action="/loginuser" method="POST">
                         @csrf
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" name="email" type="text" placeholder="Username" required/>
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="password" name="password" type="password" placeholder="Password" required/>
-                            <label for="password">Password</label>
-                        </div>
+                        <label for="input1" class="form-label">Email</label>
+                            <input type="text" class="form-control border border-black mb-3" id="input1"
+                            name="email" placeholder="email">
+                        
+                            <label for="input1" class="form-label">Password</label>
+                            <input type="text" class="form-control border border-black mb-3" id="input1"
+                            name="password" placeholder="password">
                         <button type="submit" class="btn btn-primary">Login</button>
                         
                     </form>
