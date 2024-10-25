@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RecycleController;
+use App\Http\Controllers\MapController;
 use App\Models\Merk;
 
 Route::post('/registeruser', [AuthController::class, 'register']);
@@ -29,3 +30,4 @@ Route::post('/submitrecycle', [RecycleController::class, 'submit']);
 Route::get('/hasil', function () {
     return view('hasil');
 });
+Route::get('/map', [MapController::class, 'index']);

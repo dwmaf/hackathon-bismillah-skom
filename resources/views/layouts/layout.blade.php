@@ -43,7 +43,7 @@
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">E-Facilities</a>
+                        <a class="nav-link" href="/map">E-Facilities</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Trecycle">Recycle</a>
