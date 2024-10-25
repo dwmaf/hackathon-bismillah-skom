@@ -14,9 +14,9 @@ class AuthController extends Controller
     {
         // Validate the incoming request data
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed', // Ensure the password is confirmed
+            'username' => 'required',
+            'email' => 'required|email',
+            'password' => 'required', // Ensure the password is confirmed
         ]);
 
         // Hash the password before saving
@@ -29,7 +29,7 @@ class AuthController extends Controller
         // Auth::login($user);
 
         // Return a response
-        return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
+        return redirect()->intended('/recycle');
     }
 
     // Login an existing user

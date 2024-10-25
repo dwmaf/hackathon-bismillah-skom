@@ -14,10 +14,10 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <form action="/adminlogin" method="POST">
+                        <form action="/registeruser" method="POST">
                             @csrf
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="username" name="username" type="text"
+                                <input class="form-control" id="username" name="email" type="text"
                                     placeholder="Username" required />
                                 <label for="username">Email</label>
                             </div>
@@ -31,7 +31,7 @@
                                     placeholder="Password" required />
                                 <label for="password">Password</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">Register</button>
 
                         </form>
                     </div>
