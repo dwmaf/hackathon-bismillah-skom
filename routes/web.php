@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RecycleController;
 use App\Models\Merk;
 
 Route::post('/registeruser', [AuthController::class, 'register']);
@@ -23,4 +24,8 @@ Route::get('/recycle', function () {
 });
 Route::get('/Trecycle', function () {
     return view('TabelRecycle');
+});
+Route::post('/submitrecycle', [RecycleController::class, 'submit']);
+Route::get('/hasil', function () {
+    return view('hasil');
 });
