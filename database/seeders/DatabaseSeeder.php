@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Merk;
+use App\Models\mitra;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -27,5 +28,8 @@ class DatabaseSeeder extends Seeder
         Merk::create(['nama_merk' => 'Huawei']);
         Merk::create(['nama_merk' => 'Nokia']);
         Merk::create(['nama_merk' => 'Infinix']);
+
+        mitra::create(['name' => 'Recycle Center Pontianak Barat',
+                    'latitude'=>'-0.05670000']);
     }
 }

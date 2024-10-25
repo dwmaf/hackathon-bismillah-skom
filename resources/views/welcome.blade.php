@@ -1,39 +1,58 @@
 @extends('layouts.layout')
 @section('child')
-<section class="section hero text-center d-flex align-items-center justify-content-center min-vh-100" id="home" aria-label="hero">
+
+<!-- Di dalam <head> atau sebelum </body> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+    body, h1, h2, h3, p {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Other styles */
+</style>
+
+<section class="section hero text-center d-flex align-items-center justify-content-center min-vh-100" id="home" aria-label="hero" style="background-color: #e9f5f2;"> <!-- Light teal background -->
     <div class="container">
-        <div class="hero-content text-center text-md-start"> <!-- Text aligns left on medium screens and up -->
-            <p class="mb-4 hero-subtitle">
-                Welcome to ELocate
-            </p>
+        <div class="hero-content text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <div class="text-content mb-4 mb-md-0">
+                <p class="mb-4">
+                    Welcome to goChange
+                </p>
 
-            <h1 class="h1 hero-title font-weight-bold mb-4">
-                Your technology partner for Innovative and Impactful 
-                <br />
-                <span class="text-success pt-2">
-                    E-Waste Recycling Solution
-                </span>
-            </h1>
+                <h1 class="h1 mb-4">
+                    Your technology partner for Innovative and Impactful 
+                    <br />
+                    <span class="text-success pt-2">
+                        E-Waste Recycling Solution
+                    </span>
+                </h1>
 
-            <p class="text-muted mb-4">
-                ELocate: Transforming E-Waste Management. Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.
-            </p>
+                <p class="text-muted mb-4">
+                    goChange: Transforming E-Waste Management. Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.
+                </p>
 
-            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3 mb-4">
-                <a href="{{ url('/recycle') }}" class="btn btn-success"> <!-- Green button -->
-                    Start Recycling
-                </a>
-                <a href="{{ url('/e-facilities') }}" class="btn btn-success"> <!-- Green button -->
-                    Locate Facility
-                </a>
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3 mb-4">
+                    <a href="{{ url('/recycle') }}" class="btn btn-success">
+                        Start Recycling
+                    </a>
+                    <a href="{{ url('/maps') }}" class="btn btn-success">
+                        Locate Facility
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+                <img src="https://img.freepik.com/free-photo/man-proud-himself_1368-1756.jpg?t=st=1729888065~exp=1729891665~hmac=a4c05f6645d586bf991a7bc054f9ba349647f14b0d916adf907e532b0f1343cf&w=900" alt="E-Waste Banner" class="img-fluid rounded-circle" style="max-width: 485px; ">
             </div>
         </div>
     </div>
 </section>
 
-<section class="features" id="features" aria-label="features">
-    <div class="container mx-auto px-4 pb-4 text-center">
-
+<section class="features" id="features" aria-label="features" style="background-color: #bce3c6;"> <!-- Light beige background -->
+    <div class="container mx-auto  py-4 text-center">
         @php
             $elocateFeatures = [
                 [
@@ -59,15 +78,16 @@
             ];
         @endphp
 
+        <h2 class="text-4xl font-bold text-black mb-5 mt-4">Our Features</h2>
         <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4 py-4 my-2">
             @foreach ($elocateFeatures as $feature)
                 <li class="col-md-4 mb-4 d-flex align-items-stretch">
-                    <div class="card p-4 shadow-lg border-0 h-100">
+                    <div class="card p-4 shadow-lg border-0 h-100 transition-transform transform hover:scale-105">
                         <div class="card-body bg-success text-white rounded">
                             <data class="card-number display-6 font-weight-bold d-block mb-3">
                                 {{ $feature['number'] }}
                             </data>
-                            <h3 class="h5 card-title font-weight-bold">{{ $feature['title'] }}</h3>
+                            <h3 class="h5 card-title font-weight-bold mb-2">{{ $feature['title'] }}</h3>
                             <p class="card-text">{{ $feature['description'] }}</p>
                         </div>
                     </div>
@@ -77,11 +97,28 @@
     </div>
 </section>
 
-<section class="mb-5">
+<style>
+    .card {
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .card {
+            margin: 0 auto;
+        }
+    }
+</style>
+
+<section class="mb-5" style="background-color: #bddcbf;"> <!-- Light cyan background -->
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h2 class="display-5 font-weight-bold">Frequently Asked Questions</h2>
+                <h2 class="text-4xl font-bold text-black mb-5 mt-5">Frequently Asked Questions</h2>
                 <div class="mt-4">
                     @php
                         $faqData = [

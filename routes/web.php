@@ -20,15 +20,19 @@ Route::get('/', function () {
 });
 
 Route::get('/recycle', function () {
-    $merks = Merk::all();
-    return view('recycle', ['merks' => $merks]);
-});
-Route::get('/Trecycle', function () {
+    // $merks = Merk::all();
     return view('TabelRecycle');
 });
+Route::get('/recycle/{jenis}', function ($jenis) {
+    $merks = Merk::all();
+    return view('recycle', ['merks' => $merks, 'jenis'=> $jenis]);
+});
+// Route::get('/Trecycle', function () {
+//     return view('TabelRecycle');
+// });
 Route::post('/submitrecycle', [RecycleController::class, 'submit']);
 Route::get('/hasil', function () {
     return view('hasil');
 });
-Route::get('/map', [MapController::class, 'index']);
+Route::get('/maps', [MapController::class, 'index']);
 Route::get('/history', [RecycleController::class, 'history']);

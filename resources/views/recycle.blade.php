@@ -2,7 +2,7 @@
 
 @section('child')
 <div class="d-flex justify-content-center mb-5 mt-5" style="height: 100vh;">
-    <form action="/submitrecycle" class="container shadow p-4 rounded" style="max-width: 600px;" enctype="multipart/form-data" method="POST"> <!-- Menambahkan lebar maksimum -->
+    <form action="/submitrecycle" class="bg-white container shadow p-4 rounded" style="max-width: 600px;" enctype="multipart/form-data" method="POST"> <!-- Menambahkan lebar maksimum -->
         @csrf
         <h4 class="text-center mb-25">Form Data Barang</h4> <!-- Judul form -->
         <div class="d-flex flex-column gap-3"> <!-- Menggunakan flex-column untuk tampilan vertical -->
