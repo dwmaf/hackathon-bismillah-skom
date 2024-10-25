@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RecycleController;
 use App\Http\Controllers\MapController;
 use App\Models\Merk;
+use App\Models\Mitra;
 
 Route::post('/registeruser', [AuthController::class, 'register']);
 Route::post('/loginuser', [AuthController::class, 'login']);
@@ -24,8 +25,9 @@ Route::get('/recycle', function () {
     return view('TabelRecycle');
 });
 Route::get('/recycle/{jenis}', function ($jenis) {
-    $merks = Merk::all();
-    return view('recycle', ['merks' => $merks, 'jenis'=> $jenis]);
+    $merks = Merk::where('jenis', $jenis)->get();
+    $mitras = Mitra::all();
+    return view('recycle', ['merks' => $merks, 'jenis'=> $jenis, 'mitras' => $mitras]);
 });
 // Route::get('/Trecycle', function () {
 //     return view('TabelRecycle');

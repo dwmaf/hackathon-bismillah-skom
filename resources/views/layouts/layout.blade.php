@@ -15,7 +15,8 @@
         body {
             padding-top: 85px;
             background-color: rgb(240, 246, 242);
-            font-family: 'Poppins', sans-serif; /* Changed to Poppins */
+            font-family: 'Poppins', sans-serif;
+            /* Changed to Poppins */
         }
 
         .navbar {
@@ -34,18 +35,32 @@
             margin-right: auto;
         }
 
+        .navbar-nav .nav-item {
+            margin-right: 30px;
+            /* Adjust this value to increase/decrease spacing */
+        }
+
+        /* Optional: Adjust the last nav-item to remove extra margin */
+        .navbar-nav .nav-item:last-child {
+            margin-right: 0;
+        }
+
         .nav-link {
-            transition: color 0.3s ease; /* Smooth color transition */
-            color: #333; /* Dark color for inactive links */
+            transition: color 0.3s ease;
+            /* Smooth color transition */
+            color: #333;
+            /* Dark color for inactive links */
         }
 
         /* Active link color */
         .nav-link.active {
-            color: #28a745; /* Green for active links */
+            color: #28a745;
+            /* Green for active links */
         }
 
         .nav-link:hover {
-            color: #28a745; /* Change link color on hover */
+            color: #28a745;
+            /* Change link color on hover */
         }
 
         footer {
@@ -85,7 +100,8 @@
                         <a class="nav-link {{ request()->is('recycle') ? 'active' : '' }}" href="/recycle">Recycle</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('education') ? 'active' : '' }}" href="#">Education</a>
+                        <a class="nav-link {{ request()->is('education') ? 'active' : '' }}"
+                            href="#">Education</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="#">Contact</a>
@@ -114,7 +130,7 @@
 
     <footer class="footer">
         <p class="text-muted mb-0">goChange © 2024 . All Rights Reserved.</p>
-        
+
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -122,7 +138,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
