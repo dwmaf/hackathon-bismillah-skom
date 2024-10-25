@@ -13,25 +13,25 @@
 </head>
 
 <body>
-    <h1 class="text-center">Isi data barang</h1>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <h1 class="text-center mb-3">Isi data barang</h1>
+    <div class="d-flex justify-content-center  " style="height: 100vh;">
         <form action="">
-            <div class="d-flex flex-row gap-3">
+            <div class="d-flex flex-row gap-3 ">
                 <div class="mb-3">
                     <label for="input1" class="form-label">Merk</label>
-                    <input type="text" class="form-control" id="input1" placeholder="Isi merk barang">
+                    <input type="text" class="form-control border border-black" id="input1" placeholder="Isi merk barang">
                     <label for="input1" class="form-label">Model</label>
-                    <input type="text" class="form-control" id="input1" placeholder="Isi model barang">
+                    <input type="text" class="form-control border border-black" id="input1" placeholder="Isi model barang">
                     <label for="input1" class="form-label">Kondisi</label>
-                    <input type="text" class="form-control" id="input1" placeholder="Isi kondisi barang">
+                    <input type="text" class="form-control border border-black" id="input1" placeholder="Isi kondisi barang">
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Foto barang</label>
                     <input class="form-control" type="file" id="formFile">
                     <label for="input1" class="form-label">Lokasi</label>
-                    <input type="text" class="form-control" id="input1" placeholder="Isi lokasi outlet">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example Textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your text here"></textarea>
+                    <input type="text" class="form-control border border-black" id="input1" placeholder="Isi lokasi outlet">
+                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                    <textarea class="form-control border border-black" id="deskripsi" rows="3" placeholder="isi deskripsi lebih lanjut di sini"></textarea>
                 </div>
 
             </div>
