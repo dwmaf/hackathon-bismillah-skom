@@ -31,21 +31,8 @@
                     <textarea class="form-control border border-black mb-3" id="deskripsi" rows="3"
                         placeholder="isi deskripsi lebih lanjut di sini" name="deskripsi"></textarea>
                 </div>
-
-@section('child')
-<div class="d-flex justify-content-center mb-5 mt-5" style="height: 100vh;">
-    <form action="" class="container shadow p-4 rounded" style="max-width: 600px;"> <!-- Menambahkan lebar maksimum -->
-        <h4 class="text-center mb-25">Form Data Barang</h4> <!-- Judul form -->
-        <div class="d-flex flex-column gap-3"> <!-- Menggunakan flex-column untuk tampilan vertical -->
-            <div>
-                <label for="input1" class="form-label">Merk</label>
-                <input type="text" class="form-control border border-success" id="input1" placeholder="Isi merk barang"> <!-- Border berwarna -->
             </div>
-            <div>
-                <label for="input2" class="form-label">Model</label>
-                <input type="text" class="form-control border border-success" id="input2" placeholder="Isi model barang"> <!-- Border berwarna -->
-            </div>
-
+                <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 @endsection
