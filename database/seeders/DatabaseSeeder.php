@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Merk;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,9 +16,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        
+        Merk::create(['nama_merk' => 'Samsung']);
+        Merk::create(['nama_merk' => 'Xiaomi']);
+        Merk::create(['nama_merk' => 'Oppo']);
+        Merk::create(['nama_merk' => 'Vivo']);
+        Merk::create(['nama_merk' => 'Realme']);
+        Merk::create(['nama_merk' => 'Apple']);
+        Merk::create(['nama_merk' => 'Asus']);
+        Merk::create(['nama_merk' => 'Huawei']);
+        Merk::create(['nama_merk' => 'Nokia']);
+        Merk::create(['nama_merk' => 'Infinix']);
     }
 }
