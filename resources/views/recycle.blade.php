@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <title>Bismillah Skom</title>
-</head>
-
-<body>
-    <h1 class="text-center mb-5">Isi data barang</h1>
+@extends('layouts.layout')
+@section('child')
+<h1 class="text-center mb-5">Isi data barang</h1>
     <div class="d-flex justify-content-center  " style="height: 100vh;">
         <form action="">
             <div class="d-flex flex-row gap-3 ">
@@ -44,7 +31,5 @@
                 <button type="submit" class="btn" style="background-color: #25C350">Submit</button>
             </div>
         </form>
-    </div>
-</body>
-
-</html>
+    </div>    
+@endsection
