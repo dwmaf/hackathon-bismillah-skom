@@ -44,7 +44,7 @@ class AuthController extends Controller
         // Attempt to log the user in
         if (Auth::attempt($validatedData)) {
             // Authentication passed, return user data
-            return response()->json(['message' => 'Login successful', 'user' => Auth::user()]);
+            return redirect()->intended('/recycle');
         }
 
         // If authentication fails, throw a validation exception
