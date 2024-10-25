@@ -9,59 +9,64 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <style>
-
-        .card {
-            border: none;
-            height: 300px; 
-            display: flex; 
-            flex-direction: column;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        .navbar {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+            border: none; /* Menghilangkan border */
+            height: 85px;
         }
 
-        .container-custom {
-            padding: 20px; /* Ruang di dalam container */
-            border-radius: 10px; /* Membuat sudut bulat pada container */
-            background-color: #ffffff; /* Menjaga warna putih pada latar belakang */
+        .navbar-nav {
+            margin-left: auto; /* Untuk memindahkan navbar ke tengah */
+            margin-right: auto; /* Untuk memindahkan navbar ke tengah */
         }
 
-        .btn {
-            margin-top: auto; /* Menggeser tombol ke bawah dalam card */
+        body {
+            padding-top: 85px; /* Memberikan ruang untuk navbar yang fixed */
         }
     </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container d-flex justify-content-between"> <!-- Ganti container-fluid dengan container -->
-        <a class="navbar-brand" href="/">
-            {{-- <img src="{{ url('/img/logo-jombang1.png') }}" alt="Logo"> --}}
-            Bismillah-Skom
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02"> <!-- Ganti justify-content- menjadi justify-content-end -->
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link " href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/Trecycle">Recycle</a>
-                </li>
-                
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> <!-- Menambahkan fixed-top -->
+        <div class="container">
+            <a class="navbar-brand" href="#">Brand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">E-Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Trecycle">Recycle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Rules</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-    </div>
-  </nav>
-  @yield('child')
-  
+    </nav>
 
-  
+    @yield('child')
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
