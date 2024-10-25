@@ -24,8 +24,9 @@ Route::get('/recycle', function () {
     return view('TabelRecycle');
 });
 Route::get('/recycle/{jenis}', function ($jenis) {
-    $merks = Merk::all();
-    return view('recycle', ['merks' => $merks, 'jenis'=> $jenis]);
+    // Fetch all merks where jenis matches the parameter
+    $merks = Merk::where('jenis', $jenis)->get();
+    return view('recycle', ['merks' => $merks]);
 });
 // Route::get('/Trecycle', function () {
 //     return view('TabelRecycle');
