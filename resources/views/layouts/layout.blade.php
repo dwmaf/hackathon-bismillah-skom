@@ -33,11 +33,8 @@
         
     </div>
   </nav>
-
-  <main>
-    {{-- content child di sini --}}
-    @yield('child')
-  </main>
+  @yield('child')
+  
 
   
 

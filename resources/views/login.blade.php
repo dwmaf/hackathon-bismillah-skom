@@ -14,7 +14,7 @@
                 </div>
                 @endif
                 <div class="card-body">
-                    <form action="/adminlogin" method="POST">
+                    <form action="/loginuser" method="POST">
                         @csrf
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" name="email" type="text" placeholder="Username" required/>

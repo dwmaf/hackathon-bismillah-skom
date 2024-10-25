@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <h1 class="text-center mb-3">Isi data barang</h1>
-    <div class="d-flex justify-content-center  " style="height: 100vh;">
+    <h1 class="text-center mb-5">Isi data barang</h1>
+    <div class="d-flex justify-content-center " style="height: 100vh;">
         <form action="">
             <div class="d-flex flex-row gap-3 ">
                 <div class="mb-3">
@@ -35,28 +35,14 @@
                 </div>
 
             </div>
-            <button type="submit" class="btn " style="background-color: green">Submit</button>
+            <div class="container mt-5 d-flex justify-content-center">
+                <button type="submit" class="btn " style="background-color: #25C350">Submit</button>
+            </div>
+            
         </form>
     </div>
 
-    <div class="container-fluid">
-        <div style="min-height: 100vh" class="row mt-4">
-            <div class="col-md-4">
-                <div class="card align-items-center d-flex flex-column justify-content-center" style="width: 18rem;">
-                    {{-- <img src="{{ url('/img/menu-surat.jpg') }}" class="card-img-top" alt="..."> --}}
-                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                        <h5 class="card-title">SURAT NIKAH</h5>
-                        <form action="" method="POST">
-                            @csrf
-                            <input type="hidden" name="jenis_surat" value="surat nikah">
-                            <button type="submit" class="btn btn-primary mt-3">BUAT</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
 </body>
 
 </html>
