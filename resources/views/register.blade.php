@@ -22,9 +22,9 @@
                                 <label for="username">Email</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="username" name="username" type="text"
+                                <input class="form-control" id="name" name="name" type="text"
                                     placeholder="Username" required />
-                                <label for="username">Username</label>
+                                <label for="name">Username</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="password" name="password" type="password"
