@@ -13,7 +13,11 @@
                             <i class="fa-solid fa-mobile-screen-button fs-1"></i>
                         </div>
                         <h5 class="card-title font-weight-bold">Smartphone</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis voluptatum nulla vel similique aspernatur ad porro reprehenderit illo! Itaque atque numquam neque at rerum hic nostrum ducimus nulla, voluptas eum!</p>
+                        <p>Recycle your old smartphones responsibly.
+
+                            We ensure proper dismantling and recycling of electronic components.
+                            
+                            Make sure to remove any personal data before recycling.</p>
                     </div>
                     <a href="/recycle/smartphone" class="btn mb-5" style="background-color: #25C350">Recycle Now</a>
                 </div>
@@ -26,7 +30,11 @@
                             <i class="fa-solid fa-laptop fs-1"></i>
                         </div>
                         <h5 class="card-title font-weight-bold">Laptop</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis voluptatum nulla vel similique aspernatur ad porro reprehenderit illo! Itaque atque numquam neque at rerum hic nostrum ducimus nulla, voluptas eum!</p>
+                        <p>Dispose of your old laptops in an eco-friendly way.
+
+                            Our recycling process adheres to environmental standards.
+                            
+                            Please remove batteries before recycling.</p>
                     </div>
                     <a href="/recycle/laptop" class="btn mb-5" style="background-color: #25C350">Recycle Now</a>
                 </div>
@@ -39,7 +47,11 @@
                             <i class="fa-solid fa-computer fs-1"></i>
                         </div>
                         <h5 class="card-title font-weight-bold">Computer</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis voluptatum nulla vel similique aspernatur ad porro reprehenderit illo! Itaque atque numquam neque at rerum hic nostrum ducimus nulla, voluptas eum!</p>
+                        <p>Recycle your outdated desktop computers responsibly.
+
+                            Our recycling service ensures the safe handling and disposal of electronic parts.
+                            
+                            Please remove any hard drives to safeguard personal data before recycling.</p>
                     </div>
                     <a href="/recycle/computer" class="btn mb-5" style="background-color: #25C350">Recycle Now</a>
                 </div>
