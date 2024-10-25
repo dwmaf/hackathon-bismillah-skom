@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.layout')
 
-<head>
-    <title>OpenStreetMap Laravel</title>
+@section('child')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
@@ -45,11 +43,11 @@
         /* Map styling */
         #map {
             height: 500px;
-            width: 60%;
-            margin: 1%;
+            width: 100%;
+            margin:1%;
         }
         .container {
-            height: 60%
+            height: 100%
         }
     </style>
 </head>
@@ -164,4 +162,4 @@
     </script>
 </body>
 
-</html>
+@endsection

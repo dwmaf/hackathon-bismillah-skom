@@ -22,6 +22,7 @@
 
         body {
             padding-top: 85px; /* Memberikan ruang untuk navbar yang fixed */
+            background-color: rgb(240, 246, 242);
         }
     </style>
 </head>
