@@ -31,3 +31,4 @@ Route::get('/hasil', function () {
     return view('hasil');
 });
 Route::get('/map', [MapController::class, 'index']);
+Route::get('/history', [RecycleController::class, 'history']);
