@@ -1,16 +1,19 @@
 @extends('layouts.layout')
 @section('child')
-    <div class="card mt-4">
-        <div class="card-body">
-            <h5 class="card-title">Merk: {{ session('recycle')->merk_id }}</h5>
-            <p>Model: {{ session('recycle')->model }}</p>
-            <p>Kondisi: {{ session('recycle')->kondisi }}</p>
-            <p>Lokasi: {{ session('recycle')->lokasi }}</p>
-            <p>Deskripsi: {{ session('recycle')->deskripsi }}</p>
-            <!-- Jika Anda menyimpan foto, tampilkan di sini -->
-            {{-- @if (session('recycle')->foto)
-                <img src="{{ asset('storage/' . session('recycle')->foto) }}" alt="Foto Barang" class="img-fluid mt-2">
-            @endif --}}
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; min-width:500px">
+        <div class="card mt-4">
+            <div class="card-body">
+                @if (session()->has('success'))
+                    <div class="alert alert-primary" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <p>Merk: {{ session('merk')->nama_merk }}</p>
+                <p>Model: {{ session('recycle')->model }}</p>
+                <p>Kondisi: {{ session('recycle')->kondisi }}</p>
+                <p>Lokasi: {{ session('recycle')->lokasi }}</p>
+                <p>Deskripsi: {{ session('recycle')->deskripsi }}</p>
+            </div>
         </div>
     </div>
 @endsection
