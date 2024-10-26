@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('merk_id');
             $table->string("model");
             $table->string("kondisi");
-            $table->string("lokasi");
+            $table->foreignId("lokasi_id");
             $table->string("foto");
             $table->text("deskripsi");
             $table->timestamps();

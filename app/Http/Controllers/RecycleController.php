@@ -14,7 +14,7 @@ class RecycleController extends Controller
             'merk_id' => 'required', 
             'model' => 'required',
             'kondisi'=>'required',
-            'lokasi'=>'required',
+            'lokasi_id'=>'required',
             'deskripsi'=>'required',
             'foto'=>'image'
         ]);
@@ -22,15 +22,14 @@ class RecycleController extends Controller
             $validatedData['foto'] = $request->file('foto')->store('foto');
         }
         $recycle = Recycle::create($validatedData);
-        $merk = Merk::find($recycle->merk_id); 
-
+        $merk = Merk::find($recycle->merk_id);
         return redirect('/hasil')->with('success', 'Berhasil tambah data')->with('recycle', $recycle)->with('merk', $merk);
     }
 
     public function history()
     {
         return view('/historyrecycle', [
-            'recycles' => Recycle::with('merk')->get()
+            'recycles' => Recycle::with(['merk', 'mitra'])->get()
         ]);
     }
 }

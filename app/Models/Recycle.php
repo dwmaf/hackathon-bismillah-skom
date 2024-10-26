@@ -9,14 +9,14 @@ class Recycle extends Model
         return $this->belongsTo(Merk::class);
     }
     public function mitra(){
-        return $this->belongsTo(mitra::class);
+        return $this->belongsTo(Mitra::class);
     }
     protected $fillable = [
         'merk_id',
         'model' ,
             'kondisi',
             'foto',
-            'lokasi',
+            'lokasi_id',
             'deskripsi'
     ];
 }
