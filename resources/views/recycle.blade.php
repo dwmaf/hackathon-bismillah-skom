@@ -14,6 +14,7 @@
         <form action="/submitrecycle" class="bg-white container shadow p-5 rounded" style="max-width: 900px;"
             enctype="multipart/form-data" method="POST">
             @csrf
+            <input type="text" name="jenis" value="{{ $jenis }}" required hidden>
             <h4 class="text-center mb-4 text-success">Formulir Pengajuan Barang untuk Daur Ulang</h4>
             <p class="text-muted text-center mb-4">Isi detail barang yang ingin Anda daur ulang. Pastikan informasi lengkap
                 dan akurat.</p>
