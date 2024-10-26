@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId("lokasi_id");
             $table->string("foto");
             $table->text("deskripsi");
+            $table->string("status")->default('pending');
             $table->timestamps();
         });
     }
