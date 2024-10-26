@@ -87,7 +87,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
-                    <div class="card shadow-lg border-0 rounded-lg mt-5" style="height: 450px">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5" style="height: 480px">
                         <div class="card-header text-center">
                             <h3 class=" font-weight-light my-4">Register</h3>
                         </div>
@@ -112,6 +112,7 @@
                                 <button type="submit" class="btn btn-primary">Sign Up</button>
         
                             </form>
+                            <h6 class="mt-2">Jika sudah punya akun <a href="/login">Silahkan masuk di sini</a></h6 class="mt-3">
                         </div>
                     </div>
                 </div>

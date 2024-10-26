@@ -110,6 +110,8 @@
                                 <button type="submit" class="btn btn-primary">Login</button>
                                 
                             </form>
+                            
+                            <h6 class="mt-2">Jika belum punya akun <a href="/register">Silahkan daftar di sini</a></h6 class="mt-2">
                         </div>
                     </div>
                 </div>
