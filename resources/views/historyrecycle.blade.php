@@ -31,7 +31,17 @@
                                 <td>{{ $recycle->kondisi }}</td>
                                 <td>{{ $recycle->name }}</td>
                                 <td>{{ $recycle->deskripsi }}</td>
-                                <td>{{ $recycle->status }}</td>
+                                <td>
+                                    @if ($recycle->status === 'pending')
+                                        <span class="badge bg-warning text-dark">Pending</span>
+                                    @elseif ($recycle->status === 'rejected')
+                                        <span class="badge bg-danger">Rejected</span>
+                                    @elseif ($recycle->status === 'success')
+                                        <span class="badge bg-success">Success</span>
+                                    @else
+                                        <span class="badge bg-secondary">Unknown</span>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
