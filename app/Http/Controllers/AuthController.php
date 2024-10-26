@@ -35,23 +35,32 @@ class AuthController extends Controller
     // Login an existing user
     public function login(Request $request)
     {
-        // Validate the incoming request data
+        // Validasi data yang diterima
         $validatedData = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        // Attempt to log the user in
+        // Attempt untuk login
         if (Auth::attempt($validatedData)) {
-            // Authentication passed, return user data
-            return redirect()->intended('/Trecycle');
+            // Ambil data user yang sedang login
+            $user = Auth::user();
+
+            // Buat cookie untuk menyimpan data user, misalnya nama dan email
+            $cookie = cookie('user_data', json_encode([
+                'name' => $user->name
+            ]), 60 * 24); // Cookie berlaku selama 1 hari (1440 menit)
+
+            // Redirect ke halaman yang diinginkan dengan cookie
+            return redirect()->intended('/Trecycle')->cookie($cookie);
         }
 
-        // If authentication fails, throw a validation exception
+        // Jika login gagal, kirimkan pesan error
         throw ValidationException::withMessages([
             'email' => ['The provided credentials are incorrect.'],
         ]);
     }
+
 
     // Logout the user
     public function logout(Request $request)
