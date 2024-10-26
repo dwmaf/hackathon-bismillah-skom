@@ -38,3 +38,8 @@ Route::get('/hasil', function () {
 });
 Route::get('/maps', [MapController::class, 'index']);
 Route::get('/history', [RecycleController::class, 'history']);
+
+
+Route::get('/Contact', function () {
+    return view('Kontak');
+});

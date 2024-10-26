@@ -104,7 +104,7 @@
                             href="#">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="#">Contact</a>
+                        <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="/Contact">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('history') ? 'active' : '' }}" href="/history">History</a>
