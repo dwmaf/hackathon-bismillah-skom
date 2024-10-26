@@ -110,8 +110,12 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('history') ? 'active' : '' }}" href="/history">History</a>
                     </li>
-
                 </ul>
+            </div>
+            <!-- Login and Signup Buttons -->
+            <div class="d-flex">
+                <a class="btn btn-outline-success me-2" href="/login" role="button">Login</a>
+                <a class="btn btn-success" href="/register" role="button">Sign Up</a>
             </div>
 
         </div>
