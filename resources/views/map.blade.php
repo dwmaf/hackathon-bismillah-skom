@@ -1,13 +1,14 @@
 @extends('layouts.layout')
 
 @section('child')
+    <!-- Leaflet CSS and JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
     <style>
-        /* General styling */
         body {
-            font-family: 'Poppins', sans-serif; /* Using Poppins font */
-            background-color: #f4f4f4; /* Light background for better contrast */
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -15,8 +16,8 @@
 
         .container {
             display: flex;
-            height: 100vh; /* Full height for the viewport */
-            overflow: hidden; /* Prevent overflow */
+            height: 100vh;
+            overflow: hidden;
         }
 
         /* Card styling */
@@ -24,10 +25,9 @@
             width: 40%;
             padding: 20px;
             overflow-y: auto;
-            background-color: #ffffff; /* White background for cards */
+            background-color: #ffffff;
             border-right: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .card {
@@ -37,133 +37,137 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+            transition: box-shadow 0.3s ease;
         }
 
         .card h3 {
             margin: 0;
             color: #2C3E50;
-            font-size: 20px; /* Larger font size */
+            font-size: 20px;
+        }
+
+        .maps {
+            margin-top: 50px;
         }
 
         .card p {
             margin: 5px 0;
             color: #34495E;
-            font-size: 16px; /* Larger font size */
+            font-size: 16px;
         }
 
-        /* Map styling */
         #map {
-            height: 100%; /* Full height */
-            width: 60%; /* Full width */
+            height: 100%;
+            width: 60%;
         }
 
-        /* Media query for responsiveness */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
-                flex-direction: column; /* Stack vertically on small screens */
+                flex-direction: column;
             }
+
             .card-list {
-                width: 100%; /* Full width on mobile */
-                border-right: none; /* Remove border */
-                border-bottom: 1px solid #ddd; /* Add bottom border */
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
             }
+
             #map {
-                width: 100%; /* Full width on mobile */
-                height: 400px; /* Set fixed height */
+                width: 100%;
+                height: 400px;
             }
         }
     </style>
-</head>
 
-<body>
-    <div class="container">
-        <!-- Mitra List on the left -->
-        <div class="card-list" id="card-list">
-            <h2>Mitra List</h2> <!-- Title for better context -->
+    <body>
+        <div class="container maps">
+            <!-- Mitra List -->
+            <div class="card-list" id="card-list">
+                <h2>Daftar Mitra</h2>
+            </div>
+
+            <!-- Map -->
+            <div id="map"></div>
         </div>
 
-        <!-- Map on the right -->
-        <div id="map"></div>
-    </div>
+        <script>
+            // Inisialisasi peta
+            var map = L.map('map').setView([-0.0376495, 109.3435703], 13);
 
-    <script>
-        // Initialize the map
-        var map = L.map('map').setView([-0.0376495, 109.3435703], 13);
-
-        // Add OpenStreetMap layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Mitra data from Laravel backend
-        var mitras = @json($mitras);
-
-        var LeafIcon = L.Icon.extend({
-            options: {
-                iconSize: [38, 95],
-                shadowSize: [50, 64],
-                iconAnchor: [22, 94],
-                shadowAnchor: [4, 62],
-                popupAnchor: [-3, -76]
-            }
-        });
-
-        // Inline SVG as a data URI
-        var svgIconUrl = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(` ... `); // SVG remains unchanged
-
-        // Set the SVG icon URL in Leaflet
-        var greenIcon = new LeafIcon({
-            iconUrl: svgIconUrl,
-        });
-
-        // Loop through each mitra and add it to the map and list
-        mitras.forEach(function(mitra) {
-            // Add marker to the map
-            var marker = L.marker([mitra.latitude, mitra.longitude], {
-                icon: greenIcon
+            // Tambahkan layer OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
-            marker.bindPopup(`
-                <div class="popup-content">
-                    <h3>${mitra.name}</h3>
-                    <p><strong>Address:</strong> ${mitra.address}</p>
-                    <p><strong>Contact:</strong> ${mitra.phone}</p>
-                    <p><strong>Time:</strong> ${mitra.time}</p>
-                </div>
+
+            // Data Mitra dari backend Laravel
+            var mitras = @json($mitras);
+
+            // Ikon khusus untuk lokasi mitra
+            var LeafIcon = L.Icon.extend({
+                options: {
+                    iconSize: [38, 95],
+                    shadowSize: [50, 64],
+                    iconAnchor: [22, 94],
+                    shadowAnchor: [4, 62],
+                    popupAnchor: [-3, -76]
+                }
+            });
+
+            // Ikon SVG
+            var svgIconUrl = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+                <svg display="block" height="41px" width="27px" viewBox="0 0 27 41" xmlns="http://www.w3.org/2000/svg">
+                    <defs><radialGradient id="shadowGradient"><stop offset="10%" stop-opacity="0.4"></stop><stop offset="100%" stop-opacity="0.05"></stop></radialGradient></defs>
+                    <ellipse cx="13.5" cy="34.8" rx="10.5" ry="5.25" fill="url(#shadowGradient)"></ellipse>
+                    <path fill="#22b371" d="M27,13.5C27,19.07 20.25,27 14.75,34.5C14.02,35.5 12.98,35.5 12.25,34.5C6.75,27 0,19.22 0,13.5C0,6.04 6.04,0 13.5,0C20.96,0 27,6.04 27,13.5Z"></path>
+                    <circle fill="white" cx="13.5" cy="13.5" r="5.5"></circle>
+                </svg>
             `);
 
-            // Add card to the card list
-            var cardList = document.getElementById('card-list');
-            var card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <h3>${mitra.name}</h3>
-                <p><strong>Address:</strong> ${mitra.address}</p>
-                <p><strong>Contact:</strong> ${mitra.phone}</p>
-                <p><strong>Time:</strong> ${mitra.time}</p>
-            `;
-            cardList.appendChild(card);
-        });
+            var greenIcon = new LeafIcon({ iconUrl: svgIconUrl });
 
-        // Get the user's current location
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                const userLat = position.coords.latitude;
-                const userLon = position.coords.longitude;
+            // Tambahkan marker dan card untuk setiap mitra
+            mitras.forEach(function(mitra) {
+                // Marker pada peta
+                var marker = L.marker([mitra.latitude, mitra.longitude], { icon: greenIcon }).addTo(map);
+                marker.bindPopup(`
+                    <div class="popup-content">
+                        <h3>${mitra.name}</h3>
+                        <p><strong>Alamat:</strong> ${mitra.address}</p>
+                        <p><strong>Kontak:</strong> ${mitra.phone}</p>
+                        <p><strong>Jam Operasional:</strong> ${mitra.time}</p>
+                    </div>
+                `);
 
-                // Set the map view to the user's location
-                map.setView([userLat, userLon], 13);
-
-                // Add a marker for the user's location
-                var userMarker = L.marker([userLat, userLon]).addTo(map);
-                userMarker.bindPopup("<b>Your Location</b>").openPopup();
-            }, function(error) {
-                console.error("Geolocation error:", error);
+                // Tambahkan card untuk setiap mitra di daftar
+                var cardList = document.getElementById('card-list');
+                var card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3>${mitra.name}</h3>
+                    <p><strong>Alamat:</strong> ${mitra.address}</p>
+                    <p><strong>Kontak:</strong> ${mitra.phone}</p>
+                    <p><strong>Jam Operasional:</strong> ${mitra.time}</p>
+                `;
+                cardList.appendChild(card);
             });
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    </script>
-</body>
 
+            // Lokasi pengguna
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const userLat = position.coords.latitude;
+                    const userLon = position.coords.longitude;
+
+                    // Tampilkan lokasi pengguna
+                    map.setView([userLat, userLon], 13);
+                    var userMarker = L.marker([userLat, userLon]).addTo(map);
+                    userMarker.bindPopup("<b>Lokasi Anda</b>").openPopup();
+                }, function(error) {
+                    console.error("Kesalahan Geolokasi:", error);
+                });
+            } else {
+                alert("Geolokasi tidak didukung oleh browser ini.");
+            }
+        </script>
+    </body>
 @endsection

@@ -29,9 +29,6 @@ Route::get('/recycle/{jenis}', function ($jenis) {
     $mitras = Mitra::all();
     return view('recycle', ['merks' => $merks, 'jenis'=> $jenis, 'mitras' => $mitras]);
 });
-// Route::get('/Trecycle', function () {
-//     return view('TabelRecycle');
-// });
 Route::post('/submitrecycle', [RecycleController::class, 'submit']);
 Route::get('/hasil', function () {
     return view('hasil');
