@@ -14,22 +14,24 @@
                             <th>No</th>
                             <th>jenis</th>
                             <th>Merk</th>
+                            <th>Model</th>
                             <th>Kondisi</th>
                             <th>Lokasi</th>
                             <th>Deskripsi</th>
-                            <th>Estimasi</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($recycles as $recycle)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $recycle->merk->jenis }}</td>
-                                <td>{{ $recycle->merk->nama_merk }}</td>
+                                <td>{{ $recycle->jenis }}</td>
+                                <td>{{ $recycle->nama_merk }}</td>
                                 <td>{{ $recycle->model }}</td>
                                 <td>{{ $recycle->kondisi }}</td>
-                                <td>{{ $recycle->mitra->name }}</td>
+                                <td>{{ $recycle->name }}</td>
                                 <td>{{ $recycle->deskripsi }}</td>
+                                <td>{{ $recycle->status }}</td>
                             </tr>
                         @endforeach
                     </tbody>

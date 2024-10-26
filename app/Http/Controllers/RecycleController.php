@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Recycle;
 use App\Models\Merk;
 use App\Models\mitra;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class RecycleController extends Controller
@@ -29,7 +30,11 @@ class RecycleController extends Controller
     public function history()
     {
         return view('/historyrecycle', [
-            'recycles' => Recycle::with(['merk', 'mitra'])->get()
+            'recycles' => DB::table('recycles')
+                            ->join('merks', 'recycles.merk_id', '=', 'merks.id')
+                            ->join('mitras', 'recycles.lokasi_id', '=', 'mitras.id')
+                            ->select('recycles.*', 'merks.nama_merk','merks.jenis', 'mitras.name')
+                            ->get()
         ]);
     }
 }
