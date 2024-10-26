@@ -8,6 +8,9 @@ class Recycle extends Model
     public function merk(){
         return $this->belongsTo(Merk::class);
     }
+    public function mitra(){
+        return $this->belongsTo(mitra::class);
+    }
     protected $fillable = [
         'merk_id',
         'model' ,

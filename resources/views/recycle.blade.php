@@ -41,7 +41,7 @@
             <!-- Lokasi Selection -->
             <div>
                 <label for="lokasiMitra" class="form-label fw-bold">Lokasi Mitra</label>
-                <select class="form-select border border-success" name="lokasi_mitra_id" id="lokasiMitra" required>
+                <select class="form-select border border-success" name="lokasi" id="lokasiMitra" required>
                     <option value="" disabled selected>Pilih lokasi mitra terdekat</option>
                     @foreach ($mitras as $mitra)
                         <option value="{{ $mitra->id }}">{{ $mitra->name }}</option>
