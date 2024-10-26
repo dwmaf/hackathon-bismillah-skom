@@ -17,6 +17,7 @@ class Recycle extends Model
             'kondisi',
             'foto',
             'lokasi_id',
-            'deskripsi'
+            'deskripsi',
+            'estimasi'
     ];
 }
