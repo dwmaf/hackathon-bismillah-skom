@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 class RecycleController extends Controller
 {
     public function submit(Request $request)
-    {
-        dd($request);
+    { 
         $validatedData = $request->validate([
             'merk_id' => 'required', 
             'model' => 'required',
