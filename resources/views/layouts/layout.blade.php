@@ -84,10 +84,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <div>
-                <a class="navbar-brand text-warning" href="/"><span class="text-success">go</span>Change</a>
-            <img src="{{ asset('basic-gold-coin.png') }}" alt="Logo" style="height: 50px;">
-            </div>  
+            <a class="navbar-brand text-warning" href="/"><span class="text-success">go</span>Change</a> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -113,29 +110,6 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('history') ? 'active' : '' }}" href="/history">History</a>
                     </li>
-                    @if (Auth::check())
-                        <!-- Jika user sudah login, tampilkan nama dan tombol logout -->
-                        <li class="nav-item">
-                            Halo, {{ json_decode(request()->cookie('user_data'))->name ?? 'Guest' }}
-                        </li>
-                        <li class="nav-item">
-                            <form action="/logout" method="POST" class="d-inline">
-                                @csrf
-                                <button type="submit" class="nav-link border-0 bg-transparent">
-                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
-                                    Logout
-                                </button>
-                            </form>
-                        </li>
-                    @else
-                        <!-- Jika user belum login, tampilkan tombol login dan sign up -->
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="/login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="/register">Sign Up</a>
-                        </li>
-                    @endif
 
                 </ul>
             </div>
