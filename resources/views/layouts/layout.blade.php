@@ -88,7 +88,7 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse justify-space-between" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
@@ -109,12 +109,13 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('history') ? 'active' : '' }}" href="/history">History</a>
                     </li>
-                    @if (Auth::check())
+                </ul>
+                @if (Auth::check())
                         <!-- Jika user sudah login, tampilkan nama dan tombol logout -->
-                        <li class="nav-item">
+                        <div class="nav-item">
                             Halo, {{ json_decode(request()->cookie('user_data'))->name ?? 'Guest' }}
-                        </li>
-                        <li class="nav-item">
+                        </div>
+                        <div class="nav-item">
                             <form action="/logout" method="POST" class="d-inline">
                                 @csrf
                                 <button type="submit" class="nav-link border-0 bg-transparent">
@@ -122,19 +123,15 @@
                                     Logout
                                 </button>
                             </form>
-                        </li>
+                        </div>
                     @else
                         <!-- Jika user belum login, tampilkan tombol login dan sign up -->
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="/login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="/register">Sign Up</a>
-                        </li>
+                        <a class=" btn btn-primary mx-2" href="/login">Login</a>
+                        <a class=" btn btn-primary" href="/register">Sign Up</a>
+                        
                     @endif
-
-                </ul>
             </div>
+
         </div>
     </nav>
 
