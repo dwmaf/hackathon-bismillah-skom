@@ -40,3 +40,7 @@ Route::get('/history', [RecycleController::class, 'history']);
 Route::get('/Contact', function () {
     return view('Kontak');
 });
+
+Route::get('/Education', function () {
+    return view('Education');
+});
