@@ -18,10 +18,6 @@
     <div class="container">
         <div class="hero-content text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between">
             <div class="text-content mb-4 mb-md-0">
-                <p class="mb-4">
-                    Welcome to goChange
-                </p>
-
                 <h1 class="h1 mb-4">
                     Your technology partner for Innovative and Impactful 
                     <br />
@@ -31,7 +27,7 @@
                 </h1>
 
                 <p class="text-muted mb-4">
-                    goChange: Transforming E-Waste Management. Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.
+                    <span class="text-success">go</span><span class="text-warning">Change</span>: Transforming E-Waste Management. Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.
                 </p>
 
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3 mb-4">

@@ -32,7 +32,7 @@
                                 <td>{{ $recycle->kondisi }}</td>
                                 <td>{{ $recycle->name }}</td>
                                 <td>{{ $recycle->deskripsi }}</td>
-                                <td>{{ $recycle->estimasi }}</td>
+                                <td>Rp {{ $recycle->estimasi }}</td>
                                 <td>
                                     @if ($recycle->status === 'pending')
                                         <span class="badge bg-warning text-dark">Pending</span>
